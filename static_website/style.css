@@ -1,0 +1,515 @@
+/* ============================================
+   Yash Soni — DevOps Learning Log
+   Theme: terminal / CI-CD pipeline
+   ============================================ */
+
+:root {
+  --bg: #0d1117;
+  --bg-panel: #11161d;
+  --bg-raised: #161b22;
+  --line: #21262d;
+  --text: #c9d1d9;
+  --text-dim: #6e7681;
+  --text-bright: #f0f6fc;
+  --green: #3fb950;
+  --green-dim: #2ea043;
+  --amber: #d29922;
+  --blue: #58a6ff;
+  --red: #f85149;
+
+  --mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Top nav ---------- */
+
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(13, 17, 23, 0.85);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.topnav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.brand {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--text-bright);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand .dot {
+  color: var(--green);
+}
+
+.topnav nav {
+  display: flex;
+  gap: 22px;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.topnav nav a {
+  color: var(--text-dim);
+}
+
+.topnav nav a:hover {
+  color: var(--text-bright);
+  text-decoration: none;
+}
+
+/* ---------- Hero / terminal window ---------- */
+
+.hero {
+  padding: 64px 0 40px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--green);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--text-bright);
+  margin: 0 0 12px;
+  line-height: 1.25;
+}
+
+.hero p.lede {
+  color: var(--text-dim);
+  font-size: 16px;
+  max-width: 540px;
+  margin: 0 0 24px;
+}
+
+.term {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.term-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--bg-raised);
+  border-bottom: 1px solid var(--line);
+}
+
+.term-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.term-dot.r {
+  background: #ff5f56;
+}
+
+.term-dot.y {
+  background: #ffbd2e;
+}
+
+.term-dot.g {
+  background: #27c93f;
+}
+
+.term-title {
+  margin-left: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.term-body {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  padding: 18px 20px 22px;
+  color: var(--text);
+  white-space: pre-wrap;
+}
+
+.term-body .prompt {
+  color: var(--green);
+}
+
+.term-body .path {
+  color: var(--blue);
+}
+
+.term-body .comment {
+  color: var(--text-dim);
+}
+
+.term-body .out {
+  color: var(--text);
+}
+
+.caret {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: var(--green);
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+  vertical-align: -3px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ---------- Section scaffolding ---------- */
+
+section {
+  padding: 56px 0;
+  border-top: 1px solid var(--line);
+}
+
+section:first-of-type {
+  border-top: none;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.section-head .tag {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.section-head h2 {
+  font-size: 22px;
+  color: var(--text-bright);
+  margin: 0;
+}
+
+/* ---------- About / education ---------- */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 28px;
+}
+
+.card {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px 22px;
+}
+
+.card h3 {
+  font-size: 14px;
+  color: var(--text-dim);
+  font-family: var(--mono);
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 8px 12px;
+  font-size: 14.5px;
+}
+
+.kv dt {
+  color: var(--text-dim);
+}
+
+.kv dd {
+  margin: 0;
+  color: var(--text);
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline li {
+  position: relative;
+  padding-left: 22px;
+  padding-bottom: 18px;
+  border-left: 2px solid var(--line);
+  margin-left: 5px;
+  font-size: 14.5px;
+}
+
+.timeline li:last-child {
+  padding-bottom: 0;
+  border-left: 2px solid transparent;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg-panel);
+  border: 2px solid var(--green);
+}
+
+.timeline .year {
+  font-family: var(--mono);
+  color: var(--green);
+  font-size: 12.5px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ---------- Skills pipeline (signature element) ---------- */
+
+.pipeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.stage {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 16px;
+}
+
+.stage-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stage-node {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-raised);
+  border: 2px solid var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.stage-line {
+  flex: 1;
+  width: 2px;
+  background: var(--line);
+  min-height: 24px;
+}
+
+.stage:last-child .stage-line {
+  display: none;
+}
+
+.stage-content {
+  padding-bottom: 30px;
+}
+
+.stage-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.stage-name {
+  font-family: var(--mono);
+  font-size: 15px;
+  color: var(--text-bright);
+}
+
+.stage-tool {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--amber);
+  background: rgba(210, 153, 34, 0.1);
+  border: 1px solid rgba(210, 153, 34, 0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.stage-status {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--green);
+  margin-left: auto;
+}
+
+.stage-desc {
+  color: var(--text-dim);
+  font-size: 14.5px;
+  margin: 0;
+  max-width: 560px;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0 48px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--text-dim);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+footer a {
+  color: var(--text-dim);
+}
+
+footer a:hover {
+  color: var(--blue);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kv {
+    grid-template-columns: 90px 1fr;
+  }
+
+  .topnav nav {
+    gap: 14px;
+  }
+
+  .stage-status {
+    margin-left: 0;
+  }
+}
+
+/* ---------- Error page (404) ---------- */
+
+.error-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.error-term {
+  width: 100%;
+  max-width: 640px;
+}
+
+.error-code {
+  font-family: var(--mono);
+  color: var(--red);
+}
+
+.error-body .line {
+  margin: 0 0 6px;
+}
+
+.error-body .label {
+  color: var(--text-dim);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--green);
+  border: 1px solid var(--green-dim);
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: rgba(63, 185, 80, 0.08);
+}
+
+.btn:hover {
+  background: rgba(63, 185, 80, 0.16);
+  text-decoration: none;
+}

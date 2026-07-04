@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — page not found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="error-screen">
+    <div class="error-term term">
+      <div class="term-bar">
+        <span class="term-dot r"></span>
+        <span class="term-dot y"></span>
+        <span class="term-dot g"></span>
+        <span class="term-title">error.sh</span>
+      </div>
+      <div class="term-body error-body">
+        <p class="line"><span class="prompt">yash@devops</span><span class="path">:~$</span> cd /requested-page</p>
+        <p class="line error-code">bash: cd: /requested-page: No such file or directory</p>
+        <p class="line" style="margin-top: 14px;"><span class="label">exit code:</span> 404</p>
+        <p class="line"><span class="label">reason:</span> this page hasn't been deployed (or never existed).</p>
+        <p class="line"><span class="label">suggestion:</span> head back and try a route that's actually in the
+          pipeline.</p>
+        <a class="btn" href="index.html">cd ~/home</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+bucket_name              = "your-site-bucket-v1"
+lock_table_name          = "your-remote-backend-lock-table"
+remote_state_bucket_name = "your-backend-state-bucket-v1"

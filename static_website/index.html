@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yash Soni — DevOps Learning Log</title>
+  <meta name="description" content="Yash Soni's DevOps learning log: AWS, Terraform, Ansible, Docker, Kubernetes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topnav">
+    <div class="wrap">
+      <div class="brand"><span class="dot">●</span> yash@devops:~</div>
+      <nav>
+        <a href="#about">about</a>
+        <a href="#education">education</a>
+        <a href="#pipeline">skills</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">status: learning in progress</p>
+          <h1>Hi, I'm Yash Soni.<br>I'm building my DevOps skill set, one tool at a time.</h1>
+          <p class="lede">MCA student, BCA graduate (2024), currently learning the tools that take an application from
+            code to running infrastructure: AWS, Terraform, Ansible, Docker, and Kubernetes.</p>
+        </div>
+
+        <div class="term">
+          <div class="term-bar">
+            <span class="term-dot r"></span>
+            <span class="term-dot y"></span>
+            <span class="term-dot g"></span>
+            <span class="term-title">whoami.sh</span>
+          </div>
+          <div class="term-body"><span class="prompt">yash@devops</span><span class="path">:~$</span> whoami
+            <span class="out">Yash Soni — MCA student, aspiring DevOps Engineer</span>
+
+            <span class="prompt">yash@devops</span><span class="path">:~$</span> cat education.txt
+            <span class="out">2024 B.C.A. — graduated
+              now M.C.A. — in progress</span>
+
+            <span class="prompt">yash@devops</span><span class="path">:~$</span> ls skills/
+            <span class="out">aws/ terraform/ ansible/ docker/ kubernetes/</span>
+
+            <span class="prompt">yash@devops</span><span class="path">:~$</span> <span class="comment"># still learning,
+              still shipping</span><span class="caret"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="tag">01</span>
+          <h2>about</h2>
+        </div>
+        <div class="about-grid">
+          <div class="card">
+            <h3>profile</h3>
+            <dl class="kv">
+              <dt>name</dt>
+              <dd>Yash Soni</dd>
+              <dt>currently</dt>
+              <dd>Pursuing MCA</dd>
+              <dt>graduated</dt>
+              <dd>BCA, 2024</dd>
+              <dt>focus</dt>
+              <dd>DevOps &amp; Cloud Infrastructure</dd>
+              <dt>status</dt>
+              <dd style="color: var(--green);">actively learning</dd>
+            </dl>
+          </div>
+          <div class="card">
+            <h3>what I'm doing</h3>
+            <p style="margin: 0; font-size: 14.5px; color: var(--text);">
+              I'm learning DevOps by going through the full toolchain that real teams use to ship software:
+              provisioning cloud infrastructure on AWS, automating server configuration with Ansible,
+              defining infrastructure as code with Terraform, packaging applications with Docker, and
+              orchestrating it all with Kubernetes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="tag">02</span>
+          <h2>education</h2>
+        </div>
+        <div class="card">
+          <ul class="timeline">
+            <li>
+              <span class="year">2024</span>
+              <strong style="color: var(--text-bright);">B.C.A. — Bachelor of Computer Applications</strong>
+              <p class="stage-desc" style="margin-top: 4px;">Completed graduation in 2024.</p>
+            </li>
+            <li>
+              <span class="year">In progress</span>
+              <strong style="color: var(--text-bright);">M.C.A. — Master of Computer Applications</strong>
+              <p class="stage-desc" style="margin-top: 4px;">Currently pursuing my master's while learning DevOps tools
+                alongside the coursework.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="pipeline">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="tag">03</span>
+          <h2>skills — build pipeline</h2>
+        </div>
+
+        <div class="pipeline">
+
+          <div class="stage">
+            <div class="stage-rail">
+              <div class="stage-node">✓</div>
+              <div class="stage-line"></div>
+            </div>
+            <div class="stage-content">
+              <div class="stage-top">
+                <span class="stage-name">build</span>
+                <span class="stage-tool">Docker</span>
+                <span class="stage-status">● learning</span>
+              </div>
+              <p class="stage-desc">Packaging applications into containers — images, Dockerfiles, volumes, and
+                networking.</p>
+            </div>
+          </div>
+
+          <div class="stage">
+            <div class="stage-rail">
+              <div class="stage-node">✓</div>
+              <div class="stage-line"></div>
+            </div>
+            <div class="stage-content">
+              <div class="stage-top">
+                <span class="stage-name">provision</span>
+                <span class="stage-tool">Terraform</span>
+                <span class="stage-status">● learning</span>
+              </div>
+              <p class="stage-desc">Defining infrastructure as code so cloud resources are repeatable and
+                version-controlled.</p>
+            </div>
+          </div>
+
+          <div class="stage">
+            <div class="stage-rail">
+              <div class="stage-node">✓</div>
+              <div class="stage-line"></div>
+            </div>
+            <div class="stage-content">
+              <div class="stage-top">
+                <span class="stage-name">configure</span>
+                <span class="stage-tool">Ansible</span>
+                <span class="stage-status">● learning</span>
+              </div>
+              <p class="stage-desc">Automating server setup and configuration with playbooks instead of manual steps.
+              </p>
+            </div>
+          </div>
+
+          <div class="stage">
+            <div class="stage-rail">
+              <div class="stage-node">✓</div>
+              <div class="stage-line"></div>
+            </div>
+            <div class="stage-content">
+              <div class="stage-top">
+                <span class="stage-name">orchestrate</span>
+                <span class="stage-tool">Kubernetes</span>
+                <span class="stage-status">● learning</span>
+              </div>
+              <p class="stage-desc">Deploying and scaling containers across a cluster — pods, services, and deployments.
+              </p>
+            </div>
+          </div>
+
+          <div class="stage">
+            <div class="stage-rail">
+              <div class="stage-node">✓</div>
+            </div>
+            <div class="stage-content">
+              <div class="stage-top">
+                <span class="stage-name">host</span>
+                <span class="stage-tool">AWS</span>
+                <span class="stage-status">● learning</span>
+              </div>
+              <p class="stage-desc">Running it all on the cloud — EC2, S3, IAM, and the core services behind most
+                production stacks.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex; justify-content: space-between; width: 100%;">
+      <span>© 2026 Yash Soni</span>
+      <span>build: passing · last updated June 2026</span>
+    </div>
+  </footer>
+
+</body>
+
+</html>
