@@ -164,7 +164,7 @@ terraform apply
 ```bash
 terraform destroy
 ```
-"change the variable names as per your need"
+> **Note:** use `terraform.tfvars` in the place of `terraform.tfvars.example` and Update the values in  `terraform.tfvars.example` according to your environment.
 ---
 
 ## 📦 Modules
